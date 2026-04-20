@@ -34,3 +34,16 @@ export function computeSnapshot(nowMs: number = Date.now()): CounterSnapshot {
 export function formatCount(n: number): string {
   return Math.floor(n).toLocaleString("en-US");
 }
+
+/**
+ * Compute how many births/deaths have occurred in a session,
+ * given a start timestamp.
+ */
+export function computeSessionDelta(sessionStartMs: number, nowMs: number = Date.now()) {
+  const elapsedSeconds = (nowMs - sessionStartMs) / 1000;
+  return {
+    bornInSession: elapsedSeconds * 4.3,  // BIRTH_RATE_PER_SECOND
+    deceasedInSession: elapsedSeconds * 2.0, // DEATH_RATE_PER_SECOND
+    elapsedSeconds,
+  };
+}
