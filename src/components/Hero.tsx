@@ -13,7 +13,7 @@ export function Hero() {
         <p className="font-sans text-sm uppercase tracking-[0.2em] text-[#0A0A0A]/60">
           Ever born
         </p>
-        <p className="mt-6 font-serif text-6xl tabular-nums sm:text-7xl md:text-7xl lg:text-8xl xl:text-9xl">
+        <p className="mt-6 font-serif text-5xl tabular-nums sm:text-6xl md:text-7xl lg:text-8xl">
           {formatCount(born)}
         </p>
         <p className="mt-6 max-w-xs text-center font-sans text-sm leading-relaxed text-[#0A0A0A]/60">
@@ -27,7 +27,7 @@ export function Hero() {
         <p className="font-sans text-sm uppercase tracking-[0.2em] text-[#FAFAF7]/60">
           Ever deceased
         </p>
-        <p className="mt-6 font-serif text-6xl tabular-nums sm:text-7xl md:text-7xl lg:text-8xl xl:text-9xl">
+        <p className="mt-6 font-serif text-5xl tabular-nums sm:text-6xl md:text-7xl lg:text-8xl">
           {formatCount(deceased)}
         </p>
         <p className="mt-6 max-w-xs text-center font-sans text-sm leading-relaxed text-[#FAFAF7]/60">
