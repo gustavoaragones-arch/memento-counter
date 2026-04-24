@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Footer } from "./Footer";
 
 interface CompanionPageLayoutProps {
   eyebrow: string;
@@ -12,6 +13,7 @@ export function CompanionPageLayout({
   children,
 }: CompanionPageLayoutProps) {
   return (
+    <>
     <main className="min-h-screen bg-[#FAFAF7] px-6 py-20 text-[#0A0A0A]">
       <div className="mx-auto max-w-2xl">
         <Link
@@ -66,5 +68,7 @@ export function CompanionPageLayout({
         </div>
       </div>
     </main>
+    <Footer />
+    </>
   );
 }

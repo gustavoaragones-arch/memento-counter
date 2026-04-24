@@ -6,6 +6,7 @@ import { SessionCounter } from "@/components/SessionCounter";
 import { Methodology } from "@/components/Methodology";
 import { FAQ } from "@/components/FAQ";
 import { FAQSchema } from "@/components/FAQSchema";
+import { Footer } from "@/components/Footer";
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
       <SessionCounter />
       <Methodology />
       <FAQ />
+      <Footer />
     </>
   );
 }

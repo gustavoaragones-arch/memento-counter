@@ -32,6 +32,9 @@ export const metadata: Metadata = {
     title: "Memento — The Humanity Counter",
     description: "A live ledger of every human who has ever lived.",
   },
+  verification: {
+    google: process.env.NEXT_PUBLIC_GSC_VERIFICATION,
+  },
 };
 
 export default function RootLayout({
