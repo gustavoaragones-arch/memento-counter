@@ -1,7 +1,7 @@
 "use client";
 
 import { useLiveCounter } from "@/lib/useLiveCounter";
-import { formatCount } from "@/lib/counter";
+import { formatCount, formatApproxScale } from "@/lib/counter";
 
 export function Hero() {
   const { born, deceased } = useLiveCounter();
@@ -16,6 +16,9 @@ export function Hero() {
         <p className="mt-6 font-serif text-5xl tabular-nums sm:text-6xl md:text-7xl lg:text-8xl">
           {formatCount(born)}
         </p>
+        <p className="mt-3 font-sans text-xs uppercase tracking-[0.15em] text-[#0A0A0A]/40">
+          {formatApproxScale(born)}
+        </p>
         <p className="mt-6 max-w-xs text-center font-sans text-sm leading-relaxed text-[#0A0A0A]/60">
           Total humans who have ever lived, from the earliest recorded
           populations to this moment.
@@ -29,6 +32,9 @@ export function Hero() {
         </p>
         <p className="mt-6 font-serif text-5xl tabular-nums sm:text-6xl md:text-7xl lg:text-8xl">
           {formatCount(deceased)}
+        </p>
+        <p className="mt-3 font-sans text-xs uppercase tracking-[0.15em] text-[#FAFAF7]/50">
+          {formatApproxScale(deceased)}
         </p>
         <p className="mt-6 max-w-xs text-center font-sans text-sm leading-relaxed text-[#FAFAF7]/60">
           Approximately 93% of every human who has ever lived is no longer

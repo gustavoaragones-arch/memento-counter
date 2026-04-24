@@ -36,6 +36,31 @@ export function formatCount(n: number): string {
 }
 
 /**
+ * Render a large number as a friendly approximate label.
+ * Examples:
+ *   117_030_722_739 → "≈ 117 billion"
+ *   108_910_336_157 → "≈ 108 billion"
+ *   8_120_000_000   → "≈ 8 billion"
+ *   520_000_000     → "≈ 520 million"
+ * Rounds DOWN to the nearest whole unit to avoid ever overstating.
+ */
+export function formatApproxScale(n: number): string {
+  if (n >= 1_000_000_000) {
+    const billions = Math.floor(n / 1_000_000_000);
+    return `≈ ${billions} billion`;
+  }
+  if (n >= 1_000_000) {
+    const millions = Math.floor(n / 1_000_000);
+    return `≈ ${millions} million`;
+  }
+  if (n >= 1_000) {
+    const thousands = Math.floor(n / 1_000);
+    return `≈ ${thousands} thousand`;
+  }
+  return `≈ ${Math.floor(n)}`;
+}
+
+/**
  * Compute how many births/deaths have occurred in a session,
  * given a start timestamp.
  */
