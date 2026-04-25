@@ -12,7 +12,7 @@ export function Footer() {
             </p>
           </div>
 
-          <nav className="flex flex-wrap gap-x-6 gap-y-2 font-sans text-sm text-[#0A0A0A]/60">
+          <nav className="flex flex-wrap gap-x-6 gap-y-2 font-sans text-xs uppercase tracking-wider text-[#0A0A0A]/60">
             <Link href="/methodology" className="hover:text-[#0A0A0A]">
               Methodology
             </Link>
@@ -22,8 +22,11 @@ export function Footer() {
             <Link href="/terms" className="hover:text-[#0A0A0A]">
               Terms
             </Link>
+            <Link href="/disclaimer" className="hover:text-[#0A0A0A]">
+              Disclaimer
+            </Link>
             <a
-              href="mailto:contact@albor.digital"
+              href="mailto:contact@mementocount.com"
               className="hover:text-[#0A0A0A]"
             >
               Contact
