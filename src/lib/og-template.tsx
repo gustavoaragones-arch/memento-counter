@@ -1,5 +1,5 @@
 import React from "react";
-import { computeSnapshot, formatCount } from "./counter";
+import { computeSnapshot, formatCount, formatApproxScale } from "./counter";
 
 interface OGTemplateProps {
   timestampMs?: number;
@@ -9,6 +9,8 @@ export function renderOGTemplate({ timestampMs }: OGTemplateProps = {}) {
   const snapshot = computeSnapshot(timestampMs ?? Date.now());
   const bornStr = formatCount(snapshot.born);
   const deceasedStr = formatCount(snapshot.deceased);
+  const bornApprox = formatApproxScale(snapshot.born);
+  const deceasedApprox = formatApproxScale(snapshot.deceased);
   const deceasedPct = ((snapshot.deceased / snapshot.born) * 100).toFixed(1);
 
   const frozenLabel = timestampMs
@@ -22,6 +24,7 @@ export function renderOGTemplate({ timestampMs }: OGTemplateProps = {}) {
         width: "100%",
         height: "100%",
         fontFamily: "serif",
+        position: "relative",
       }}
     >
       {/* Light half — Born */}
@@ -35,15 +38,15 @@ export function renderOGTemplate({ timestampMs }: OGTemplateProps = {}) {
           height: "100%",
           backgroundColor: "#FAFAF7",
           color: "#0A0A0A",
-          padding: "60px 30px",
+          padding: "60px 40px 100px 40px",
         }}
       >
         <div
           style={{
-            fontSize: 22,
+            fontSize: 20,
             textTransform: "uppercase",
             letterSpacing: "0.2em",
-            color: "rgba(10, 10, 10, 0.6)",
+            color: "rgba(10, 10, 10, 0.55)",
             fontFamily: "sans-serif",
           }}
         >
@@ -51,12 +54,25 @@ export function renderOGTemplate({ timestampMs }: OGTemplateProps = {}) {
         </div>
         <div
           style={{
-            fontSize: 84,
-            marginTop: 30,
+            fontSize: 56,
+            marginTop: 24,
             fontVariantNumeric: "tabular-nums",
+            lineHeight: 1.1,
           }}
         >
           {bornStr}
+        </div>
+        <div
+          style={{
+            fontSize: 20,
+            marginTop: 16,
+            textTransform: "uppercase",
+            letterSpacing: "0.15em",
+            color: "rgba(10, 10, 10, 0.5)",
+            fontFamily: "sans-serif",
+          }}
+        >
+          {bornApprox}
         </div>
       </div>
 
@@ -71,15 +87,15 @@ export function renderOGTemplate({ timestampMs }: OGTemplateProps = {}) {
           height: "100%",
           backgroundColor: "#0A0A0A",
           color: "#FAFAF7",
-          padding: "60px 30px",
+          padding: "60px 40px 100px 40px",
         }}
       >
         <div
           style={{
-            fontSize: 22,
+            fontSize: 20,
             textTransform: "uppercase",
             letterSpacing: "0.2em",
-            color: "rgba(250, 250, 247, 0.6)",
+            color: "rgba(250, 250, 247, 0.55)",
             fontFamily: "sans-serif",
           }}
         >
@@ -87,12 +103,25 @@ export function renderOGTemplate({ timestampMs }: OGTemplateProps = {}) {
         </div>
         <div
           style={{
-            fontSize: 84,
-            marginTop: 30,
+            fontSize: 56,
+            marginTop: 24,
             fontVariantNumeric: "tabular-nums",
+            lineHeight: 1.1,
           }}
         >
           {deceasedStr}
+        </div>
+        <div
+          style={{
+            fontSize: 20,
+            marginTop: 16,
+            textTransform: "uppercase",
+            letterSpacing: "0.15em",
+            color: "rgba(250, 250, 247, 0.5)",
+            fontFamily: "sans-serif",
+          }}
+        >
+          {deceasedApprox}
         </div>
       </div>
 
@@ -106,12 +135,12 @@ export function renderOGTemplate({ timestampMs }: OGTemplateProps = {}) {
           display: "flex",
           justifyContent: "space-between",
           alignItems: "center",
-          padding: "20px 40px",
-          backgroundColor: "rgba(10, 10, 10, 0.92)",
-          color: "rgba(250, 250, 247, 0.85)",
+          padding: "18px 40px",
+          backgroundColor: "rgba(10, 10, 10, 0.94)",
+          color: "rgba(250, 250, 247, 0.9)",
           fontFamily: "sans-serif",
-          fontSize: 18,
-          letterSpacing: "0.1em",
+          fontSize: 17,
+          letterSpacing: "0.08em",
         }}
       >
         <div style={{ display: "flex" }}>mementocount.com</div>
