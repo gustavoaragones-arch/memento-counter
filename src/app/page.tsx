@@ -3,6 +3,7 @@
 import { Hero } from "@/components/Hero";
 import { RatioBar } from "@/components/RatioBar";
 import { SessionCounter } from "@/components/SessionCounter";
+import { ShareButtons } from "@/components/ShareButtons";
 import { Methodology } from "@/components/Methodology";
 import { FAQ } from "@/components/FAQ";
 import { FAQSchema } from "@/components/FAQSchema";
@@ -15,6 +16,7 @@ export default function Home() {
       <Hero />
       <RatioBar />
       <SessionCounter />
+      <ShareButtons />
       <Methodology />
       <FAQ />
       <Footer />
