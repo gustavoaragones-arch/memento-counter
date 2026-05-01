@@ -1,0 +1,21 @@
+"use client";
+
+import { Hero } from "@/components/Hero";
+import { RatioBar } from "@/components/RatioBar";
+import { SessionCounter } from "@/components/SessionCounter";
+import { ShareButtons } from "@/components/ShareButtons";
+import { Methodology } from "@/components/Methodology";
+import { FAQ } from "@/components/FAQ";
+
+export default function HomeClient() {
+  return (
+    <>
+      <Hero />
+      <RatioBar />
+      <SessionCounter />
+      <ShareButtons />
+      <Methodology />
+      <FAQ />
+    </>
+  );
+}

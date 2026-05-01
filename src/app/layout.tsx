@@ -19,6 +19,9 @@ export const metadata: Metadata = {
   description:
     "A live counter of every human who has ever lived, split between the living and the deceased. Approximately 93% of all humans ever born are now deceased.",
   metadataBase: new URL("https://mementocount.com"),
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
     title: "Memento — The Humanity Counter",
     description:

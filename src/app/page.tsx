@@ -1,24 +1,19 @@
-"use client";
-
-import { Hero } from "@/components/Hero";
-import { RatioBar } from "@/components/RatioBar";
-import { SessionCounter } from "@/components/SessionCounter";
-import { ShareButtons } from "@/components/ShareButtons";
-import { Methodology } from "@/components/Methodology";
-import { FAQ } from "@/components/FAQ";
+import type { Metadata } from "next";
 import { FAQSchema } from "@/components/FAQSchema";
 import { Footer } from "@/components/Footer";
+import HomeClient from "./HomeClient";
+
+export const metadata: Metadata = {
+  alternates: {
+    canonical: "https://mementocount.com",
+  },
+};
 
 export default function Home() {
   return (
     <>
       <FAQSchema />
-      <Hero />
-      <RatioBar />
-      <SessionCounter />
-      <ShareButtons />
-      <Methodology />
-      <FAQ />
+      <HomeClient />
       <Footer />
     </>
   );
